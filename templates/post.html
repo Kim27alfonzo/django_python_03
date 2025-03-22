@@ -1,9 +1,16 @@
-{% for post in object_list %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
 
-    <h1>{{post.title}}</h1>
-    <p>{{post.content}}</p>
-    {% if post.image %}
-    <img src="{{post.image.url}}" alt="A picture of {{post.title}}">
-    {% endif %}
-
-{% endfor %}
+<div class="post-list">
+    {% for post in object_list %}
+    <article class="post">
+        <h1 class="post-title">{{ post.title }}</h1>
+        <p class="post-content">{{ post.content }}</p>
+        {% if post.image %}
+        <div class="post-image">
+            <img src="{{ post.image.url }}" alt="A picture of {{ post.title }}">
+        </div>
+        {% endif %}
+    </article>
+    {% endfor %}
+</div>
