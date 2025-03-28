@@ -1,0 +1,19 @@
+/* Estilos para el botón vintage */
+.btn-vintage {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #fff;
+    background-color: #8b4513; /* Color marrón oscuro */
+    border: 2px solid #654321; /* Borde marrón más oscuro */
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-vintage:hover {
+    background-color: #654321; /* Color marrón más oscuro al pasar el mouse */
+}

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Películas</title>
+    <link rel="stylesheet" href="{% static 'css/listPelicula.css' %}">
+</head>
+<body>
+    <h1>Lista de Películas</h1>
+    <div class="peliculas-list">
+        {% for pelicula in peliculas %}
+        <div class="pelicula">
+            <h2>{{ pelicula.nombre }}</h2>
+            <p><strong>Director/Autor:</strong> {{ pelicula.autor }}</p>
+            <p><strong>Descripción:</strong> {{ pelicula.descripcion }}</p>
+            <p><strong>Duración:</strong> {{ pelicula.duracion_minutos }} minutos</p>
+            <p><strong>Género:</strong> {{ pelicula.genero }}</p>
+            {% if pelicula.portada %}
+            <div class="portada">
+                <img src="{{ pelicula.portada.url }}" alt="Portada de {{ pelicula.nombre }}">
+            </div>
+            {% endif %}
+            <!-- Botón para ver más detalles -->
+            <a href="{% url 'detalle_pelicula' pelicula.pk %}" class="btn-vintage">Ver más detalles</a>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+</body>
+</html>
