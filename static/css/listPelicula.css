@@ -1,90 +1,72 @@
-/* Estilos generales */
 body {
-    font-family: 'Georgia', serif; /* Fuente clásica */
-    background-color: #f5f5dc; /* Fondo beige claro */
-    color: #4b3832; /* Color marrón oscuro */
+    background-color: #141414; /* Fondo oscuro, similar a Netflix */
+    color: #fff; /* Texto blanco */
+    font-family: sans-serif;
+    margin: 0;
     padding: 20px;
-    line-height: 1.6;
 }
 
-/* Título principal */
 h1 {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace; /* Fuente tipo máquina de escribir */
-    font-size: 36px;
-    color: #8b4513; /* Color marrón oscuro */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    letter-spacing: 3px; /* Espaciado entre letras */
     margin-bottom: 30px;
-    border-bottom: 2px solid #d2b48c; /* Línea decorativa */
-    padding-bottom: 10px;
+    color: #e50914; /* Rojo característico de Netflix */
 }
 
-/* Contenedor de la lista de películas */
 .peliculas-list {
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las películas se envuelvan en pantallas pequeñas */
+    justify-content: space-around; /* Espacio uniforme entre las películas */
 }
 
-/* Estilos para cada película */
 .pelicula {
-    background-color: #fff8e7; /* Fondo blanco roto */
-    border: 2px solid #d2b48c; /* Borde marrón claro */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-/* Estilos para el título de la película */
-.pelicula h2 {
-    font-family: 'Courier New', Courier, monospace; /* Fuente tipo máquina de escribir */
-    font-size: 24px;
-    color: #654321; /* Color marrón oscuro */
-    margin-bottom: 10px;
-    text-transform: uppercase; /* Texto en mayúsculas */
-    letter-spacing: 2px; /* Espaciado entre letras */
-}
-
-/* Estilos para el contenido de la película */
-.pelicula p {
-    font-size: 18px;
-    color: #5a4a42; /* Color marrón más oscuro */
-    margin-bottom: 10px;
-}
-
-/* Estilos para la portada de la película */
-.portada img {
-    max-width: 100%;
-    height: auto;
+    background-color: #2f2f2f; /* Fondo ligeramente más claro para las tarjetas de películas */
     border-radius: 8px;
-    border: 3px solid #d2b48c; /* Borde marrón claro */
-    margin-top: 15px;
-    filter: sepia(0.5); /* Efecto sepia para dar un toque envejecido */
-    transition: filter 0.3s ease; /* Transición suave */
+    padding: 20px;
+    margin: 10px;
+    width: 350px; /* Ancho fijo para las tarjetas de películas */
+    /* largor de imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar las tarjetas */
+    transition: transform 0.3s ease; /* Transición suave para la animación */
 }
 
-/* Efecto hover para la portada */
-.portada img:hover {
-    filter: sepia(0); /* Elimina el efecto sepia al pasar el mouse */
+.pelicula:hover {
+    transform: scale(1.05); /* Ligero aumento de tamaño al pasar el ratón */
 }
 
-/* Estilos para el botón vintage */
+.pelicula h2 {
+    color: #e50914;
+    margin-bottom: 10px;
+}
+
+.pelicula p {
+    margin: 8px 0;
+}
+
+.portada img {
+    width: 60%;
+    height: 200px; /* Mantiene la proporción de la imagen */
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
 .btn-vintage {
     display: inline-block;
-    padding: 10px 20px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
+    background-color: #e50914;
     color: #fff;
-    background-color: #8b4513; /* Color marrón oscuro */
-    border: 2px solid #654321; /* Borde marrón más oscuro */
-    border-radius: 5px;
+    padding: 10px 20px;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    border-radius: 5px;
+    margin-top: 15px;
     transition: background-color 0.3s ease;
 }
 
 .btn-vintage:hover {
-    background-color: #654321; /* Color marrón más oscuro al pasar el mouse */
+    background-color: #c20710; /* Ligeramente más oscuro al pasar el ratón */
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #444;
+    margin: 20px 0;
 }
